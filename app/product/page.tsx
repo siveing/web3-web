@@ -8,7 +8,9 @@ export const metadata: Metadata = {
 }
 
 async function getProduct(skip?: number, limit?: number) {
-    const res = await fetch(`http://localhost:3000/api/dummy?skip=${skip}&limit=${limit || 10}`);
+    const res = await fetch('https://dummyjson.com/products');
+    
+    // const res = await fetch(`http://localhost:3000/api/dummy?skip=${skip}&limit=${limit || 10}`);
     return res.json();
 }
 
