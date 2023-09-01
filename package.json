@@ -21,6 +21,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-toast": "^1.1.4",
     "@reduxjs/toolkit": "^1.9.5",
+    "@thirdweb-dev/react": "^3.14.39",
     "@types/node": "20.5.6",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",

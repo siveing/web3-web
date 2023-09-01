@@ -8,7 +8,6 @@ import Loading from '@/components/shared/Loading'
 import { CustomProvider } from './provider'
 import RootComponent from './rootComponent'
 import dynamic from 'next/dynamic'
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {

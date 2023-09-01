@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../rootStore";
 import { deleteCookie, setCookie } from 'cookies-next';
-import { getAuthCookie } from "@/lib/utils";
+import { getAuthCookie, getUserCookie } from "@/lib/utils";
 
 export type TAuth = {
     auth: boolean;
@@ -13,12 +13,13 @@ export type TUser = {
     phone: string;
     email: string;
     role?: string
-    password?: string | undefined
+    password?: string | undefined;
+    address?: string
 }
 
 const initialState: TAuth = {
     auth: getAuthCookie,
-    user: {} as TUser
+    user: getUserCookie
 }
 
 const authSlice = createSlice({
@@ -29,12 +30,14 @@ const authSlice = createSlice({
             state.auth = true;
             state.user = action.payload;
             setCookie('isLoggedIn', true);
+            setCookie('userCookie', action.payload);
             return state;
         },
         logout(state, action) {
             state.auth = false;
             state.user = action.payload;
             deleteCookie('isLoggedIn');
+            deleteCookie('userCookie');
             return state;
         }
     }

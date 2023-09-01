@@ -20,6 +20,7 @@ const initialState = {
         { path: '/dashboard', title: "Dashboard", auth: true },
         { path: '/product', title: "Product", auth: true },
         { path: '/todo', title: "Todo", auth: true },
+        { path: '/web3', title: "Web3", auth: true },
     ] as IMainNav[]
 }
 

@@ -7,3 +7,4 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getAuthCookie: boolean = getCookie('isLoggedIn') ? JSON.parse(getCookie('isLoggedIn') as string) : false;
+export const getUserCookie: any = getCookie('userCookie') ? JSON.parse(getCookie('userCookie') as string) : {};

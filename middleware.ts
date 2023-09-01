@@ -17,6 +17,7 @@ export const config = {
     matcher: [
         '/dashboard',
         '/product',
-        '/todo'
+        '/todo',
+        '/web3'
     ]
 }

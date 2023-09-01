@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
-export const dynamic = 'auto'
-export const dynamicParams = true
+// export const dynamic = 'auto'
+// export const dynamicParams = true
 // export const revalidate = false
 // export const fetchCache = 'auto'
 // export const runtime = 'nodejs'

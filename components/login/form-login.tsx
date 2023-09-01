@@ -18,6 +18,7 @@ import { useAppDispatch, useAppSelector } from "@/contexts/hook";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { setLoading } from "@/contexts/loading/loading.slice";
+import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 
 const formSchema: any = z.object({
     username: z.string().min(2, {
@@ -70,12 +71,18 @@ function FormLogin() {
         return false;
     }
 
+    const address = useAddress();
+
     useEffect(() => {
         if (auth) {
             router.push('/dashboard');
             return;
         }
-    }, [])
+        if (address) {
+            dispatch(setCurrentUser({ address }))
+            router.push('/dashboard');
+        }
+    }, [address])
 
     return (
         <Form {...form}>
@@ -108,6 +115,11 @@ function FormLogin() {
                 />
                 <Button className="mt-2">Login</Button>
             </form>
+
+            <div className="text-center space-y-3">
+                <p>OR</p>
+                <ConnectWallet theme={"dark"} />
+            </div>
         </Form>
     );
 }

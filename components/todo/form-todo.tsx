@@ -29,9 +29,11 @@ const formSchema: any = z.object({
 })
 
 export interface ITodo {
+    id?: number,
     title: string;
     person: string;
     description: string;
+    status?: string;
 }
 
 const defaultValues: ITodo = {
